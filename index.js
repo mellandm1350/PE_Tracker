@@ -20,8 +20,16 @@ express()
         try {
             const client = await pool.connect();
 
+            const tasks = await client.query(
+                `SELECT * FROM tasks ORDER BY id ASC`
+            );
+
+            const locals = {
+                'tasks': (tasks) ? tasks.rows : null
+            };
+
+            res.render('pages/index', locals);
             client.release();
-            res.send("Works");
         }
         catch (err) {
             console.error(err);
@@ -42,8 +50,11 @@ express()
                 ORDER BY c.relname, a.attnum;
                 `);
 
+                const obs = await client.query( `SELECT * FROM observations`)
+                'obs': (obs) ? obs.rows : null
+
                 const locals = {
-                    'tables': (tables) ? tables.rows : numm
+                    'tables': (tables) ? tables.rows : null
                 };
 
                 res.render('pages/db-info', locals);
@@ -57,6 +68,38 @@ express()
             res.send("Error " + err);
 
         }
+    })
+    .post('/log', async(req, res) => {
+        try {
+
+            const client = await pool.connect();
+            const usersId = req.body.users_id;
+            const studentsId = req.body.students_id
+            const tasksId = req.body.task_id;
+            const duration = req.body.duration;
+
+            const sqlInsert = await client.query(
+                `INSERT INTO observations (users_id, students_id, tasks_id, duration)
+                VALUES (${usersId}), ${studentsId}, ${tasksId}, ${duration})
+                RETURNING id AS new_id;`);
+            console.log(`Tracking task ${tasksId}`);
+
+            const result = {
+                'response': (sqlInsert) ? (sqlInsert.rows[0]) : null
+            };
+
+            res.set({
+                'Content-Type': 'application/json'
+            });
+            res.json({ requestBody: result });
+            client.release();
+            
+
+        } catch (eff) {
+            console.error(err);
+            res.send("Error " + err);
+        }
+
     })
     .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 

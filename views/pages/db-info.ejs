@@ -12,5 +12,15 @@
             
             <% }); %>
         </ul>
+        <h1>Observation</h1>
+        <ul>
+            <% obs.forEach(function(r) { %> 
+                <li>
+                    <%= r.tasks_id%> for <%= r.duration %>  
+                </li>
+                console.log(obs.rows[0].duration.minutes);
+
+            <% }); %>
+        </ul>
     </body>
 </html>
