@@ -50,11 +50,12 @@ express()
                 ORDER BY c.relname, a.attnum;
                 `);
 
-                const obs = await client.query( `SELECT * FROM observations`)
-                'obs': (obs) ? obs.rows : null
+                const obs = await client.query( `SELECT * FROM observations`);
+                
 
                 const locals = {
-                    'tables': (tables) ? tables.rows : null
+                    'tables': (tables) ? tables.rows : null,
+                    'obs': (obs) ? obs.rows : null
                 };
 
                 res.render('pages/db-info', locals);
