@@ -16,7 +16,7 @@
 
         * {
             box-sizing: border-box;
-            border: 4px, solid, black;
+            border: 4px, solid, #000;
         }
 
         /* Create four equal columns that floats next to each other */
@@ -527,7 +527,10 @@
                 </div>
 
                 <div>
-                    <button id="view-results-btn" onclick="window.location.href='db-info.ejs'">View Results</button>
+                    <% tasks.forEach(function(r) {%>
+                        <button id='<%= r.id %>' onClick='javascript:logTask(<%= r.id %>);'><%= r.name %></button>
+                        <% }); %>
+                    <button id="view-results-btn" onclick="">View Results</button>
                 </div>
 
                 <div class="inner-button-bottom">
@@ -560,6 +563,9 @@
             currentTaskId = id;
         };
 
+        const dbInfo = async function (id) {
+            
+        }
         
     </script>
 </body>
