@@ -1,15 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>PE Tracker</title>
     <meta charset="UTF-8">
+    
+    <link href="../../css/styles.css" rel="stylesheet" type="text/css" />
+    <title>PE Tracker</title>
 </head>
 <body>
-    <h1>PE Tracker</h1>
-    <% tasks.forEach(function(r) {%>
-        <button id='<%= r.id %>'
-            onClick='javascript:logTask(<%= r.id %>);'><%= r.name %></button>
-    <% }); %>
+    <div id="wrapper">
+        <div class="row" style="border: 8px ridge #626C70;">
+          <h1>PE_Tracker</h1>
+          <% tasks.forEach(function(r) {%>
+            <button id='<%= r.id %>'
+                onClick='javascript:logTask(<%= r.id %>);'><%= r.name %></button>
+        <% }); %>
+          <div class="column" style="border: 1px solid black;">
+
+            <h1>Information</h1>
+            <h3>Observer's Name:</h3>
+            <input type="text" id="observerName" name="observerName">
+    
+            <h3>Instrucor's Name:</h3>
+            <input type="text" id="instructorName" name="instructorName">
+    
+            <h3>School Name:</h3>
+            <input type="text" id="schoolName" name="schoolName">
+    
+            <div class="formGroup">
+              <br>
+              <label for="date" id="date-lbl">Date:</label>
+              <input type="text" id="date-text" name="date">
+    
+              <br>
+              <label for="grade" id="grade-lbl">Grade:</label>
+              <input type="text" id="grade-text" name="grade">
+    
+              <br>
+              <label for="topic" id="topic-lbl">Topic:</label>
+              <input type="text" id="topic-text" name="topic">
+    
+              <br>
+              <label for="topic" id="student-lbl">Student N:</label>
+              <input type="text" id="student-text" name="student">
+    
+            </div>
+    
+          </div>
+    
+          <div class="column" style="background-color:#bbb;">
+            <h1>Teacher Behavior</h1>
+    
+            <div class="inner-left">
+              <h3>Teacher Behavior</h3>
+              <button id="warmUpAndReviewBtn" onclick="TODO">Warmup/Review</button>
+    
+              <br>
+    
+    
+              <div class="button-area">
+                <button class="planned-btn" onclick="TODO">Planned Pres</button>
+                <button class="response-btn" onclick="TODO">Response Pres</button>
+                <button class="monitoring-btn" onclick="TODO">Monitoring</button>
+                <button class="perform-btn" onclick="TODO">Perform Feedbk</button>
+                <button class="motiv-btn" onclick="TODO">Motiv Feedbk</button>
+    
+                <button class="begin-and-end-class-btn" onclick="TODO">Beg/End Class</button>
+                <button class="equipment-managment-btn" onclick="TODO">Equip. Mgmt.</button>
+                <button class="organization-btn" onclick="TODO">Organization</button>
+                <button class="behavior-btn" onclick="TODO">Behavior Mgmt.</button>
+                <button class="other-tasks-btn" onclick="TODO">Other Tasks</button>
+              </div>
+    
+            </div>
+    
+            <div class="inner-right">
+    
+              <div class="time" style="border: 1px solid black;">
+                <h3>Time</h3>
+    
+                <input type="text" id="warmUpAndReviewTime" name="warmUpAndReviewTime">
+                <br><br>
+    
+                <input type="text" id="plannedTime" name="plannedTime">
+                <br>
+                <input type="text" id="responseTime" name="responseTime">
+                <br>
+                <input type="text" id="monitoringTime" name="monitoringTime">
+                <br>
+                <input type="text" id="performTime" name="performTime">
+                <br>
+                <input type="text" id="motivTime" name="motivTime">
+                <br>
+                <input type="text" id="classTime" name="warmUpAndReviewTime">
+                <br>
+                <input type="text" id="equipmentTime" name="equipmentTime">
+                <br>
+                <input type="text" id="organizationTime" name="organizationTime">
+                <br>
+                <input type="text" id="behaviorTime" name="behaviorTime">
+                <br>
+                <input type="text" id="otherTasksTime" name="otherTasksTime">
+    
+              </div>
+    
+              <div class="percent" style="border: 1px solid black;">
+                <h3>%</h3>
+                <input type="text" id="warmUpAndReviewPercent" name="warmUpAndReviewPercent">
+                <br><br>
+    
+                <input type="text" id="plannedPercent" name="plannedPercent">
+                <br>
+                <input type="text" id="responsePercent" name="responsePercent">
+                <br>
+                <input type="text" id="monitoringPercent" name="monitoringPercent">
+                <br>
+                <input type="text" id="performPercent" name="performPercent">
+                <br>
+                <input type="text" id="motivPercent" name="motivPercent">
+                <br>
+                <input type="text" id="classPercent" name="classPercent">
+                <br>
+                <input type="text" id="equipmentPercent" name="equipmentPercent">
+                <br>
+                <input type="text" id="organizationPercent" name="organizationPercent">
+                <br>
+                <input type="text" id="behaviorPercent" name="behaviorPercent">
+                <br>
+                <input type="text" id="otherTasksPercent" name="otherTasksPercent">
+    
+              </div>
+    
+              <div class="num" style="border: 1px solid black;">
+                <h3>#</h3>
+                <input type="text" id="warmUpAndReviewNum" name="warmUpAndReviewNum">
+                <br><br>
+    
+                <input type="text" id="plannedNum" name="plannedNum">
+                <br>
+                <input type="text" id="responseNum" name="responseNum">
+                <br>
+                <input type="text" id="monitoringNum" name="monitoringNum">
+                <br>
+                <input type="text" id="performNum" name="performNum">
+                <br>
+                <input type="text" id="motivNum" name="motivNum">
+                <br>
+                <input type="text" id="classNum" name="classNum">
+                <br>
+                <input type="text" id="equipmentNum" name="equipmentNum">
+                <br>
+                <input type="text" id="organizationNum" name="organizationNum">
+                <br>
+                <input type="text" id="behaviorNum" name="behaviorNum">
+                <br>
+                <input type="text" id="otherTasksNum" name="otherTasksNum">
+    
+              </div>
+            </div>
+          </div>
+    
+    
+          <div class="column" style="border: 1px solid black;">
+            <h1>Student Behavior</h1>
+            <div class="inner-left">
+              <h3>Student Behavior</h3>
+              <button id="warmUpAndReviewBtn" onclick="TODO">Warmup/Review</button>
+    
+              <h3>Skill Learning</h3>
+              <div id="skill-learning-button-Area">
+                <button class="engaged-btn" onclick="TODO">Engaged</button>
+                <button class="non-engaged-btn" onclick="TODO">Non-Engaged</button>
+                <button class="other-btn" onclick="TODO">Other</button>
+              </div>
+    
+              <h3>Game Playing</h3>
+              <div id="gamePlayingButtonArea">
+                <button class="engaged-btn" onclick="TODO">Engaged</button>
+                <button class="non-engaged-btn" onclick="TODO">Non-Engaged</button>
+                <button class="other-btn" onclick="TODO">Other</button>
+              </div>
+    
+              <br>
+    
+              <div class="button-area">
+                <button class="begin-and-end-class-btn" onclick="TODO">Beg/End Class</button>
+                <button class="equipment-managment-btn" onclick="TODO">Equip. Mgmt.</button>
+                <button class="organization-btn" onclick="TODO">Organization</button>
+                <button class="behavior-btn" onclick="TODO">Behavior Mgmt.</button>
+                <button class="other-tasks-btn" onclick="TODO">Other Tasks</button>
+              </div>
+    
+            </div>
+    
+            <div class="inner-right">
+    
+              <div class="time" style="border: 1px solid black;">
+                <h3>Time</h3>
+    
+                <input type="text" id="warmUpAndReviewTime" name="warmUpAndReviewTime">
+                <br><br>
+                <input type="text" id="skillLearningTime" name="skillLearningTime">
+                <br><br>
+    
+                <div class="skill-learning">
+                  <input type="text" id="learningEngagedTime" name="learningEngagedTime">
+                  <input type="text" id="learningNonEngagedTime" name="learningNonEngagedTime">
+                  <input type="text" id="learningOtherTime" name="learningOtherTime">
+                </div>
+                <br>
+    
+                <input type="text" id="gamePlayingTime" name="gamePlayingTime">
+                <br><br>
+                <div class="game-playing">
+                  <input type="text" id="gameEngagedTime" name="gameEngagedTime">
+                  <input type="text" id="gameNonEngagedTime" name="gameNonEngagedTime">
+                  <input type="text" id="gameOtherTime" name="gameOtherTime">
+                  <br>
+                </div>
+    
+                <input type="text" id="classTime" name="warmUpAndReviewTime">
+                <br>
+                <input type="text" id="equipmentTime" name="equipmentTime">
+                <br>
+                <input type="text" id="organizationTime" name="organizationTime">
+                <br>
+                <input type="text" id="behaviorTime" name="behaviorTime">
+                <br>
+                <input type="text" id="otherTasksTime" name="otherTasksTime">
+              </div>
+    
+              <div class="percent" style="border: 1px solid black;">
+                <h3>%</h3>
+                <input type="text" id="warmUpAndReviewPercent" name="warmUpAndReviewPercent">
+                <br><br>
+                <input type="text" id="skillLearningPercent" name="skillLearningPercent">
+                <br><br>
+    
+                <div class="skill-learning">
+                  <input type="text" id="learningEngagedPercent" name="learningEngagedPercent">
+                  <input type="text" id="learningNonEngagedPercent" name="learningNonEngagedPercent">
+                  <input type="text" id="learningOtherPercent" name="learningOtherPercent">
+                </div>
+                <br>
+    
+                <input type="text" id="gamePlayingPercent" name="gamePlayingPercent">
+                <br><br>
+                <div class="game-playing">
+                  <input type="text" id="gameEngagedPercent" name="gameEngagedPercent">
+                  <input type="text" id="gameNonEngagedPercent" name="gameNonEngagedPercent">
+                  <input type="text" id="gameOtherPercent" name="gameOtherPercent">
+                  <br>
+                </div>
+    
+                <input type="text" id="classPercent" name="classPercent">
+                <br>
+                <input type="text" id="equipmentPercent" name="equipmentPercent">
+                <br>
+                <input type="text" id="organizationPercent" name="organizationPercent">
+                <br>
+                <input type="text" id="behaviorPercent" name="behaviorPercent">
+                <br>
+                <input type="text" id="otherTasksPercent" name="otherTasksPercent">
+    
+              </div>
+    
+              <div class="num" style="border: 1px solid black;">
+                <h3>#</h3>
+                <input type="text" id="warmUpAndReviewNum" name="warmUpAndReviewNum">
+                <br><br>
+                <input type="text" id="skillLearningNum" name="skillLearningNum">
+                <br><br>
+    
+                <div class="skill-learning">
+                  <input type="text" id="learningEngagedNum" name="learningEngagedPercent">
+                  <input type="text" id="learningNonEngagedNum" name="learningNonEngagedPercent">
+                  <input type="text" id="learningOtherNum" name="learningOtherPercent">
+                </div>
+                <br>
+    
+                <input type="text" id="gamePlayingNum" name="gamePlayingNum">
+                <br><br>
+                <div class="game-playing">
+                  <input type="text" id="gameEngagedNum" name="gameEngagedNum">
+                  <input type="text" id="gameNonEngagedNum" name="gameNonEngagedNum">
+                  <input type="text" id="gameOtherNum" name="gameOtherNum">
+                  <br>
+                </div>
+    
+                <input type="text" id="classNum" name="classNum">
+                <br>
+                <input type="text" id="equipmentNum" name="equipmentNum">
+                <br>
+                <input type="text" id="organizationNum" name="organizationNum">
+                <br>
+                <input type="text" id="behaviorNum" name="behaviorNum">
+                <br>
+                <input type="text" id="otherTasksNum" name="otherTasksNum">
+    
+              </div>
+            </div>
+          </div>
+    
+          <div class="button-area" style="width: 100%;">
+    
+            <div class="inner-button-top">
+              <button id="helpBtn" onclick="TODO">Help</button>
+              <button id="resetBtn" onclick="TODO">Reset</button>
+            </div>
+    
+            <div>
+              <button id="view-results-btn" onclick="TODO">View Results</button>
+            </div>
+    
+            <div class="inner-button-bottom">
+              <button id="pauseBtn" onclick="TODO">Pause</button>
+              <button id="resumeBtn" onclick="TODO">Resume</button>
+            </div>
+    
+          </div>
+        </div>
+      </div>
 
 <script>
 let currentTaskId = null;

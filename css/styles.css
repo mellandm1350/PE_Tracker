@@ -1,0 +1,228 @@
+/******************************************* */
+
+/* ** Desktop first - default CSS will apply to
+  devices whose viewport is 767px or less ** */
+
+/******************************************* */
+
+* {
+  box-sizing: border-box;
+  border: 4px, solid, black;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+.last-column {
+  float: right;
+}
+
+.row {
+  padding: 10px;
+}
+
+.row h1 {
+  text-align: center;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#date-lbl {
+  padding-right: 13px;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+#date-text {
+  width: 141px;
+}
+
+#grade-lbl {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+#grade-text {
+  width: 141px;
+}
+
+#topic-lbl {
+  font-weight: 800;
+  font-size: 18px;
+  padding-right: 7px;
+}
+
+#topic-text {
+  width: 141px;
+}
+
+#student-lbl {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+#student-text {
+  width: 141px;
+}
+
+.inner-left {
+  width: 65%;
+  float: left;
+}
+
+.inner-left h3 {
+  text-align: center;
+}
+
+.inner-left button {
+  display: grid;
+  text-align: left;
+}
+
+.skill-learning-button-area {
+  display: block;
+  text-align: center;
+}
+
+.skill-learning input {
+  display: block;
+}
+
+.game-playing input {
+  display: block;
+}
+
+.engaged-btn {
+  padding-right: 35px;
+  text-align: center;
+  margin-left: 50px;
+}
+
+.non-engaged-btn {
+  margin-left: 50px;
+}
+
+.other-btn {
+  padding-right: 55px;
+  text-align: center;
+  margin-left: 50px;
+}
+
+.button-area {
+  display: grid;
+  text-align: center;
+}
+
+.planned-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.response-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.monitoring-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.perform-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.motiv-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.begin-and-end-class-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.equipment-managment-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.organization-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.behavior-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.other-tasks-btn {
+  margin-right: 100px;
+  text-align: center;
+}
+
+.inner-right {
+  width: 35%;
+  display: inline-block;
+}
+
+.time {
+  float: left;
+}
+
+.time input {
+  width: 45px;
+}
+
+.percent {
+  display: inline-block;
+}
+
+.percent input {
+  width: 30px;
+}
+
+.num {
+  display: inline-block;
+}
+
+.num input {
+  width: 30px;
+}
+
+.inner-button-top button {
+  padding: 10px 86px;
+}
+
+#view-results-btn {
+  padding: 10px 169px;
+}
+
+.inner-button-bottom button {
+  padding: 10px 80px;
+}
+
+/* On screens that are 995px wide or less, go from four columns to two columns */
+@media screen and (max-width: 995px) {
+  .column {
+    width: 50%;
+  }
+}
+
+/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
