@@ -2,13 +2,11 @@ const express = require('express');
 const path = require('path');
 const PORT = process.env.PORT || 5000;
 const { Pool } = require('pg');
-
-const pool = new Pool ({
+const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
-
 });
 
 express()
@@ -99,4 +97,7 @@ RETURNING id AS new_id;`);
       res.send("Error! " + err);
     }
   })
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
+  
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`))
+  console.log("****************************************************************************************************************************************************");
+  console.log(process.env.DB_PASSWORD);
