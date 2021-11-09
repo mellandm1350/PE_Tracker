@@ -527,10 +527,7 @@
                 </div>
 
                 <div>
-                    <% tasks.forEach(function(r) {%>
-                        <button id='<%= r.id %>' onClick='javascript:logTask(<%= r.id %>);'><%= r.name %></button>
-                        <% }); %>
-                    <button id="view-results-btn" onclick="">View Results</button>
+                    <button id="view-results-btn" onclick="TODO">View Results</button>
                 </div>
 
                 <div class="inner-button-bottom">
@@ -564,7 +561,7 @@
         };
 
         const dbInfo = async function (id) {
-            
+
         }
         
     </script>
