@@ -242,9 +242,6 @@
     <div id="wrapper">
         <div class="row" style="border: 8px ridge #626C70;">
             <h1>PE_Tracker</h1>
-            <% tasks.forEach(function(r) {%>
-            <button id='<%= r.id %>' onClick='javascript:logTask(<%= r.id %>);'><%= r.name %></button>
-            <% }); %>
             <div class="column" style="border: 1px solid black;">
 
                 <h1>Information</h1>
@@ -285,7 +282,9 @@
                     <h3>Teacher Behavior</h3>
                     <br>
                     <div class="button-area">
-                        <button class="planned-btn" onclick="TODO">Planned Pres</button>
+                        <% tasks.forEach(function(r) {%>
+                        <button id='<%= r.id %>' onClick='javascript:logTask(<%= r.id %>);'><%= r.name %></button>
+                        <% }); %>
                         <button class="response-btn" onclick="TODO">Response Pres</button>
                         <button class="monitoring-btn" onclick="TODO">Monitoring</button>
                         <button class="perform-btn" onclick="TODO">Perform Feedbk</button>
